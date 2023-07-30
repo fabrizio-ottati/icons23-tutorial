@@ -30,3 +30,16 @@
 *.exe
 *.out
 *.app
+
+# Weights.
+weights.h
+
+# Executables
+gen_weights
+main
+
+# Project directory
+prj
+
+# Vitis log
+vitis_hls.log
