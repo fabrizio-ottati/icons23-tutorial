@@ -15,6 +15,9 @@ using namespace std;
 
 namespace hls4nm {
 
+// Excluding this function if we are in synthesis mode.
+#ifndef __SYNTHESIS__
+
 void plot_out_spikes(const vector<array<spike_t, N>>& spk) {
   const auto T = spk.size();
 
@@ -77,8 +80,7 @@ void gen_weights(const std::string& fname) {
 
   // Create the uniform distribution object
   const weight_t MAX_WEIGHT_VAL = (1 << (WEIGHT_BITW - 1)) - 1;
-  uniform_int_distribution<> distribution(-MAX_WEIGHT_VAL * 3 / 4,
-                                          MAX_WEIGHT_VAL);
+  uniform_int_distribution<> distribution(-MAX_WEIGHT_VAL, MAX_WEIGHT_VAL);
 
   weight_t weights[M][N];
 
@@ -106,5 +108,7 @@ void gen_weights(const std::string& fname) {
   ofs << "#endif // HLS4NM_WEIGHTS_H_" << endl;
   ofs.close();
 }
+
+#endif  // __SYNTHESIS__
 
 }  // namespace hls4nm
