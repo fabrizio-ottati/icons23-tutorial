@@ -12,9 +12,11 @@ FPGA_DEVICE := $(KRIA)
 
 export FPGA_DEVICE
 
-all: weights run 
+all: weights hls
 
-run:
+hls: hls_sim hls_syn hls_vivado hls_cosim
+
+gcc_run:
 	$(CXX) $(INCLUDES) -c ../cc/src/utils.cc -o utils.o
 	$(CXX) $(INCLUDES) -c ../cc/src/lif.cc -o lif.o
 	$(CXX) $(INCLUDES) -c dut.cc -o dut.o
@@ -33,6 +35,9 @@ hls_sim:
 
 hls_syn:
 	vitis_hls -f hls_syn.tcl
+
+hls_vivado:
+	vitis_hls -f hls_vivado.tcl
 
 hls_cosim:
 	vitis_hls -f hls_cosim.tcl
