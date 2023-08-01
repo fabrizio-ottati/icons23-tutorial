@@ -15,11 +15,11 @@ using namespace std;
 using namespace hls4nm;
 
 int main(void) {
-  auto in_spk = gen_in_spikes(TIMESTEPS, SPIKE_RATE);
+  auto in_spk = gen_in_spikes<M>(TIMESTEPS, SPIKE_RATE);
 
   cout << "\n" << endl;
   cout << "Here are the input spikes!" << endl;
-  plot_in_spikes(in_spk);
+  plot_spikes<M>(in_spk);
 
   hls::stream<array<spike_t, M>> inputStream("inputStream");
   hls::stream<array<spike_t, N>> outputStream("outputStream");
@@ -35,7 +35,7 @@ int main(void) {
 
   cout << "\n" << endl;
   cout << "Here are the output spikes!" << endl;
-  plot_out_spikes(out_spk);
+  plot_spikes<N>(out_spk);
 
   return 0;
 }

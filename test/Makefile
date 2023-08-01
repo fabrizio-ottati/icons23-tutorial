@@ -17,17 +17,14 @@ all: weights hls
 hls: hls_sim hls_syn hls_vivado hls_cosim
 
 gcc_run:
-	$(CXX) $(INCLUDES) -c ../cc/src/utils.cc -o utils.o
-	$(CXX) $(INCLUDES) -c ../cc/src/lif.cc -o lif.o
 	$(CXX) $(INCLUDES) -c dut.cc -o dut.o
 	$(CXX) $(INCLUDES) -c main.cc -o main.o
-	$(CXX) $(INCLUDES) main.o utils.o lif.o dut.o -o main
+	$(CXX) $(INCLUDES) main.o dut.o -o main
 	./main
 
 weights:
-	$(CXX) $(INCLUDES) -c ../cc/src/utils.cc -o utils.o
 	$(CXX) $(INCLUDES) -c gen_weights.cc -o gen_weights.o
-	$(CXX) $(INCLUDES) gen_weights.o utils.o -o gen_weights
+	$(CXX) $(INCLUDES) gen_weights.o -o gen_weights
 	./gen_weights
 
 hls_sim:

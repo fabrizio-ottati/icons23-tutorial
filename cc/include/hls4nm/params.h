@@ -6,12 +6,6 @@
 
 namespace hls4nm {
 
-// Input feature size.
-constexpr unsigned int M = 16;
-
-// Input features size.
-constexpr unsigned int N = 8;
-
 // Type associated to the neuron state.
 typedef int8_t state_t;
 
