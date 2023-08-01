@@ -56,6 +56,7 @@ void LIF_FC<M, N>::reset(void) {
 template <unsigned M, unsigned N>
 void LIF_FC<M, N>::run(hls::stream<std::array<spike_t, M>>& dinStream,
                  hls::stream<std::array<spike_t, N>>& doutStream) {
+  constexpr unsigned STATE_MIN = -128;
   // Reading the input spikes.
   auto in_spk = dinStream.read();
 
@@ -89,7 +90,7 @@ void LIF_FC<M, N>::run(hls::stream<std::array<spike_t, M>>& dinStream,
     } else {
       out_spk[n] = 0;
     }
-    _states[n] = next_state;
+    _states[n] = next_state < STATE_MIN ? STATE_MIN : next_state;
   }
 
   doutStream << out_spk;
