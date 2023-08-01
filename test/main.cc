@@ -36,5 +36,6 @@ int main(void) {
   cout << "\n" << endl;
   cout << "Here are the output spikes!" << endl;
   plot_out_spikes(out_spk);
+
   return 0;
 }
