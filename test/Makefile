@@ -43,4 +43,4 @@ hls_cosim:
 	vitis_hls -f hls_cosim.tcl
 
 clean: 
-	rm gen_weights main *.o
+	rm -r prj gen_weights main *.o vitis_hls.log weights.h
