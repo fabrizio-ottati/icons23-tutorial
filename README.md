@@ -1,6 +1,6 @@
 # ICONS 2023 tutorial - From Training to Deployment: Build a Spiking FPGA on a $300 Budget
 
-This is the code used in the tutorial. 
+This is the code used in the tutorial. Both the Python scripts for the quantization aware training (QAT) and the high level synthesis parts can be found in this repository.
 
 ## Training
 
