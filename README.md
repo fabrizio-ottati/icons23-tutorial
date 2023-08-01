@@ -5,13 +5,10 @@ This is the code used in the C++ part of the tutorial. Here's the project direct
 ```bash
 ├── cc
 │   ├── include # Headers.
-│   │   └── hls4nm
-│   │       ├── lif.h
-│   │       ├── params.h # Parameters of the neuron.
-│   │       └── utils.h
-│   └── src # Source C++ files.
-│       ├── lif.cc # The LIF fully connected layer.
-│       └── utils.cc # Utilities to print fancy stuff.
+│       └── hls4nm
+│           ├── lif.h
+│           ├── params.h # Parameters of the neuron.
+│           └── utils.h
 ├── LICENSE
 └── test
     ├── dut.cc # The design under test. 
