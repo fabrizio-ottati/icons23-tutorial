@@ -4,7 +4,7 @@ XILINX_PATH := /eda/xilinx/Vitis_HLS/2023.1
 
 INCLUDES := -I../cc/include
 INCLUDES += -I$(XILINX_PATH)/include
-CXXFLAGS := -std=c++17 $(INCLUDES)
+CXXFLAGS := -std=c++11 $(INCLUDES)
 
 MINIZED := xc7z007sclg225-1
 KRIA := xck26-sfvc784-2LV-c
