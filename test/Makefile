@@ -4,6 +4,7 @@ XILINX_PATH := /eda/xilinx/Vitis_HLS/2023.1
 
 INCLUDES := -I../cc/include
 INCLUDES += -I$(XILINX_PATH)/include
+CXXFLAGS := -std=c++17 $(INCLUDES)
 
 MINIZED := xc7z007sclg225-1
 KRIA := xck26-sfvc784-2LV-c
@@ -16,14 +17,11 @@ all: weights hls
 
 hls: hls_sim hls_syn hls_vivado hls_cosim
 
-gcc_run:
-	$(CXX) $(INCLUDES) -c dut.cc -o dut.o
-	$(CXX) $(INCLUDES) -c main.cc -o main.o
+gcc_run: main.o dut.o
 	$(CXX) $(INCLUDES) main.o dut.o -o main
 	./main
 
-weights:
-	$(CXX) $(INCLUDES) -c gen_weights.cc -o gen_weights.o
+weights: gen_weights.o
 	$(CXX) $(INCLUDES) gen_weights.o -o gen_weights
 	./gen_weights
 

@@ -7,7 +7,7 @@
 #include "hls_stream.h"
 #include "main.h"
 
-void dut(hls::stream<std::array<hls4nm::spike_t, M>>& inputStream,
-         hls::stream<std::array<hls4nm::spike_t, N>>& outputStream);
+void dut(hls::stream<std::array<hls4nm::spike_t, MLP_M[0]>>& inputStream,
+         hls::stream<std::array<hls4nm::spike_t, MLP_N[1]>>& outputStream);
 
 #endif  // HLS4NM_TEST_DUT_H_
