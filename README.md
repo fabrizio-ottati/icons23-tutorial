@@ -4,9 +4,9 @@ This is the code used in the tutorial.
 
 ## Training
 
-In `python` you can find two Jupyter notebooks: the cheatsheet, which is the pre-compiled one; the other one, instead, is empty and you can use it to follow Jason while he codes up during the tutorial. Try it!
+In `python` you can find two Jupyter notebooks: the cheatsheet, which is the pre-compiled one, that you can read during the tutorial to follow along; the other one, instead, is empty and you can use it to follow Jason while he codes up during the tutorial. Try it!
 
-# Deploying
+## Deploying
 
 In `cc`, the C++ code used by Fabrizio is contained. In particular, in `cc/include/hls4nm/lif.h` you can find the C++ class describing the fully connected LIF layer. 
 In `hls-mlp`, a `728-1024-10` LIF multy-layer percerptron implemented in C++ is contained. Be aware, the compilation can take a bit of time! Experiment a bit, add layers and see what the synthesizer puts out!
