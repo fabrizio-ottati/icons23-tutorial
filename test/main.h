@@ -12,4 +12,8 @@ constexpr float SPIKE_RATE = 0.3;
 constexpr unsigned M = 32;
 constexpr unsigned N = 16;
 
+// Simple network.
+constexpr unsigned MLP_M[] = {784, 1024};
+constexpr unsigned MLP_N[] = {1024, 10};
+
 #endif // HLS4NM_TEST_MAIN_H_
